@@ -11,7 +11,8 @@ class LoginScreen extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (_) => LoginProvider(),
         child: Consumer<LoginProvider>(builder: (context, data, _) {
-          return Scaffold(
+          return SafeAria(
+            child : Scaffold(
             body: ListView(
               padding: const EdgeInsets.all(30),
               children: [
@@ -109,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                 )
               ],
             ),
-          );
+          ));
         }));
   }
 }
